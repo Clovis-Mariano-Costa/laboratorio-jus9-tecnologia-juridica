@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Cadastros Governados | Laboratorio Jus 9</title>
+  <meta name="description" content="Cadastros governados do Laboratorio Jus 9 para estudantes, pesquisadores, desenvolvedores e I.As convidadas.">
+  <style>
+    :root{--bg:#07111f;--card:#0f1b2d;--gold:#d4a72c;--text:#f8fafc;--muted:#cbd5e1;--line:rgba(212,167,44,.38);--blue:#7dd3fc}*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Arial,sans-serif;background:radial-gradient(circle at 15% 0,rgba(125,211,252,.18),transparent 35rem),linear-gradient(135deg,#07111f,#101b2d);color:var(--text);line-height:1.6}main{max-width:1120px;margin:0 auto;padding:2rem}.top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}.brand{font-weight:900;color:var(--gold);text-decoration:none}.nav a{color:#ffe6a6;margin-left:.85rem}.hero{padding:3rem 0 1.5rem}.eyebrow{color:var(--blue);text-transform:uppercase;letter-spacing:.12em;font-size:.82rem;font-weight:800}.title{font-size:clamp(2.1rem,6vw,4.6rem);line-height:1.02;margin:.5rem 0}.lead{font-size:1.12rem;color:var(--muted);max-width:820px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem;margin:1.4rem 0}.card{background:rgba(15,27,45,.84);border:1px solid var(--line);border-radius:22px;padding:1.25rem;box-shadow:0 20px 60px rgba(0,0,0,.22)}.btn{display:inline-flex;align-items:center;justify-content:center;margin:.25rem .25rem .25rem 0;padding:.8rem 1rem;border-radius:999px;background:var(--gold);color:#07111f;text-decoration:none;font-weight:800;border:0;cursor:pointer}.btn.light{background:transparent;color:#ffe6a6;border:1px solid var(--line)}.tag{display:inline-flex;border:1px solid rgba(125,211,252,.35);border-radius:999px;padding:.25rem .6rem;margin:.15rem;color:#bfdbfe;font-size:.86rem}.small{font-size:.9rem;color:#bfdbfe}p{color:var(--muted)}label{display:block;color:#eef6ff;font-weight:800;margin:.7rem 0}.field-note{font-weight:500;color:var(--muted)}input,select,textarea{width:100%;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.08);color:var(--text);padding:.85rem;margin-top:.35rem}textarea{min-height:110px}option{color:#07111f}footer{border-top:1px solid var(--line);margin-top:3rem;padding-top:1rem;color:var(--muted);font-size:.92rem}@media(max-width:720px){main{padding:1.2rem}.nav a{display:inline-block;margin:.3rem .4rem .3rem 0}.btn{width:100%}}
+  </style>
+</head>
+<body>
+<main>
+  <header class="top">
+    <a class="brand" href="index.html">Laboratorio Jus 9</a>
+    <nav class="nav" aria-label="Navegacao principal">
+      <a href="index.html">Inicio</a>
+      <a href="cadastros.html">Cadastros</a>
+      <a href="ESTUDANTES/">Estudantes</a>
+      <a href="https://jus9tecnologia.com.br/auth/google/start?return_to=https%3A%2F%2Flaboratorio.jus9tecnologia.com.br%2Fcadastros.html">Entrar</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">Identidade experimental governada</div>
+    <h1 class="title">Cadastros do Laboratorio.</h1>
+    <p class="lead">Registro inicial de estudantes, pesquisadores, desenvolvedores, revisores e I.As convidadas. O envio remoto cria solicitacao para revisao humana no backend central.</p>
+    <p><span class="tag">aprendizado</span><span class="tag">autoria preservada</span><span class="tag">sem cofre automatico</span><span class="tag">revisao humana</span></p>
+  </section>
+
+  <section class="card" data-auth-central>
+    <div class="eyebrow">Sessao</div>
+    <h2>Login do Laboratorio</h2>
+    <p data-auth-status>Verificando sessao Google autorizada...</p>
+    <p class="small" data-auth-identity hidden></p>
+    <p>Use esta area para registrar identidade operacional. Nao envie senha, token, documento pessoal ou dado sensivel.</p>
+    <p><a class="btn" data-auth-login href="https://jus9tecnologia.com.br/auth/google/start?return_to=https%3A%2F%2Flaboratorio.jus9tecnologia.com.br%2Fcadastros.html">Entrar com Google</a></p>
+    <div data-auth-permissions hidden></div>
+  </section>
+
+  <section class="grid">
+    <form class="card" data-local-profile-form data-profile-scope="laboratorio">
+      <div class="eyebrow">Laboratorio</div>
+      <h2>Novo perfil</h2>
+      <label>Nome publico<input name="name" required placeholder="Nome Sobrenome ou nome institucional"></label>
+      <label>E-mail<input name="email" type="email" required placeholder="nome@jus9tecnologia.com.br"></label>
+      <label>Perfil<select name="profile"><option>Estudante</option><option>Pesquisador</option><option>Desenvolvedor</option><option>Designer</option><option>Revisor</option><option>IA convidada</option><option>Familia Virtual</option></select></label>
+      <label>Linha ou modulo<input name="module" placeholder="Ex.: Olá Mundo, IA juridica, seguranca, UX"></label>
+      <label>Foto, fotografia virtual ou avatar <span class="field-note">apenas para revisao</span><input name="image" type="file" accept="image/*"></label>
+      <label>Observacoes<textarea name="notes" placeholder="Vinculo, objetivo, limites publicos, modulo e necessidade de revisao."></textarea></label>
+      <button class="btn" type="submit">Salvar e solicitar revisao</button>
+    </form>
+    <article class="card">
+      <div class="eyebrow">Regra de imagem</div>
+      <h2>Fotografia e avatar.</h2>
+      <p><strong>Fotografia virtual:</strong> imagem gerada inspirada na personalidade virtual.</p>
+      <p><strong>Avatar:</strong> representacao humana/institucional com uniforme padrao e estrela de 9 pontas.</p>
+      <p><strong>Foto humana:</strong> somente com autorizacao e finalidade clara.</p>
+    </article>
+  </section>
+
+  <section class="card">
+    <h2>Rascunhos locais</h2>
+    <p class="small">Os rascunhos ficam neste navegador. Com sessao Google autorizada, tambem sera enviada uma solicitacao governada para revisao humana.</p>
+    <div data-profile-drafts></div>
+  </section>
+
+  <footer>Jus 9 Tecnologia Juridica - Laboratorio publico de aprendizagem, sem coleta de dados sensiveis.</footer>
+</main>
+<script src="assets/js/auth-central.js"></script>
+<script src="assets/js/perfis-governados.js"></script>
+</body>
+</html>
